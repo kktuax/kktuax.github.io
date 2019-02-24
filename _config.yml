@@ -11,11 +11,11 @@ theme_settings:
   title: Max Tuni # blog's title
   avatar: assets/img/triangle.svg
   favicon: assets/favicon.ico
-  gravatar: 3990963D564F97198086796F6BDA1833 # Email MD5 hash
+  gravatar: "3990963d564f97198086796f6bda1833" # Email MD5 hash
 
   # Header and footer text
   header_text: kktuax's Blog
-  header_feature_image: assets/img/pexels/triangular.jpeg
+  header_feature_image: assets/img/pexels/pexels-photo-298673.jpeg
   footer_text: >
     Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
@@ -53,7 +53,7 @@ theme_settings:
     pinterest:
     pocket:
     reddit: true
-    linkedin:
+    linkedin: true
     wordpress:
     email: true
 

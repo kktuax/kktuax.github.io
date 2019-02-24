@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Introducing YouTuPi, a YouTube (mobile) web frontend for your Raspberry Pi"
+thumbnail: "assets/img/WfPby.jpg"
+feature-img: "assets/img/WfPby.jpg"
 tags: [youtube, raspbian, youtupi, raspberry-pi]
 ---
 

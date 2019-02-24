@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Moving your android apps to the external storage"
+feature-img: "assets/img/pexels/android-app-blog-267389.jpg"
 tags: [android, ubuntu]
 ---
 
