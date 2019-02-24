@@ -17,7 +17,7 @@ theme_settings:
   header_text: kktuax's Blog
   header_feature_image: assets/img/pexels/pexels-photo-298673.jpeg
   footer_text: >
-    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+    Created by <a href="/cv/">Max Tuni</a>. Feel free to contact in case of any enquiries.
 
   # Icons
   rss: true  # Make sure you created a feed.xml with feed.xml layout
