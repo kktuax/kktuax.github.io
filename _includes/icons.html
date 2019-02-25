@@ -10,8 +10,14 @@
 {% endif %}
 
 {% if site.theme_settings.email_address %}
+{% assign email_parts = site.theme_settings.email_address | split: "@" %}
 <li>
-	<a href="mailto:{{ site.theme_settings.email_address }}" title="{{ site.theme_settings.str_email }}">
+	<a 
+	   data-username="{{ email_parts.first }}" 
+	   data-domain="{{ email_parts.last }}" 
+	   href="#" title="{{ site.theme_settings.str_email }}"
+	   onclick="this.href = 'mailto:' + this.dataset.username + '@' + this.dataset.domain"
+	 >
 		<span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
