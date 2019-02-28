@@ -9,7 +9,8 @@ tags: [CV]
 
 # Profile
 
-I'm a passionate full stack java developer with extensive experience covering multiple technologies. I keep atop of new developments within the industry to create software in more efficient ways. I know the importance of writing clean and maintainable code. I love collaborating within the team with positive attitude in order to achieve successful delivery.
+<img src="/assets/img/profile.jpg" alt="Profile image" 
+style="width:200px"> My name is Max Tuni and I'm a full stack java developer with extensive experience covering multiple technologies. I keep atop of new developments within the industry to create software in more efficient ways. I know the importance of writing clean and maintainable code. 
  
 # Skills Summary
 
