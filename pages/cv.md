@@ -10,7 +10,7 @@ tags: [CV]
 # Profile
 
 <img src="/assets/img/profile.jpg" alt="Profile image" 
-style="width:200px"> My name is Max Tuni and I'm a full stack java developer with extensive experience covering multiple technologies. I keep atop of new developments within the industry to create software in more efficient ways. I know the importance of writing clean and maintainable code. 
+class="avatar"> My name is Max Tuni and I'm a full stack java developer with extensive experience covering multiple technologies. I keep atop of new developments within the industry to create software in more efficient ways. I know the importance of writing clean and maintainable code. 
  
 # Skills Summary
 
