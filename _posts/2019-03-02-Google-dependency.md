@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Thoughts about my love-hate relationship with Google"
+title: " Reducing my Google dependency"
 tags: [google, android, alternatives]
 ---
 
