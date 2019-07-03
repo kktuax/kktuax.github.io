@@ -4,6 +4,7 @@ url: "https://maxtuni.es"
 title: Max Tuni # site's title
 description: "kktuax's Blog" # used by search engines
 
+future: true
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
@@ -27,7 +28,7 @@ theme_settings:
   dribbble:
   facebook:
   flickr:
-  gitlab: 
+  gitlab:
   github: "kktuax"
   google_plus:
   instagram:
@@ -43,7 +44,7 @@ theme_settings:
   vimeo:
   wordpress:
   youtube:
-  
+
   # Sharing options
   share_buttons:
     facebook: true
@@ -57,19 +58,18 @@ theme_settings:
     wordpress:
     email: true
 
-  # Scripts / Features 
+  # Scripts / Features
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
   disqus_shortname:
-  katex: true # Enable if using math markup
   
   special_page:
-    search: 
+    search:
       icon: "search"
       enabled: true
     tags:
       icon: "tags"
       enabled: true
-  
+
   # Localization strings
   str_follow_on: "Follow on"
   str_rss_follow: "Follow RSS feed"
@@ -90,8 +90,8 @@ theme_settings:
 
   # Post navigation
   post_navigation: true
-  
-  
+
+
 # PAGINATION
 paginate: 5
 paginate_path: "blog/page:num"
