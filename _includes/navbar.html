@@ -1,57 +1,34 @@
-<header class="site-header">
-    
-    <!-- Logo and title -->
-	<div class="branding">
-		<a href="{{ '/' | relative_url }}">
-			<img alt="logo img" class="avatar" src="{{ site.theme_settings.avatar | relative_url }}" alt=""/>
-		</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a class="navbar-brand" href="#">
+		<img src="{{ site.theme_settings.avatar | relative_url }}" width="30" height="30" alt="">
+	</a>
+	<a class="navbar-brand" alt="{{ site.theme_settings.title }}" href="{{ '/' | relative_url }}">{{ site.theme_settings.title }}</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		<div class="navbar-nav">
+			<!-- Auto Generation of NORMAL pages in the navbar -->
+			{% assign name_page = "" %}
 
-		<h1 class="site-title">
-			<a alt="{{ site.theme_settings.title }}" href="{{ '/' | relative_url }}"> 
-        {{ site.theme_settings.title }}
-      </a>
-		</h1>
+			{% for page in site.pages %}
+			{% if page.title and page.hide != true %}
+			{% if name_page contains page.title %}
+			{% else %}
+				<a class="nav-item nav-link" name="{{ page.title }}" href="{{ page.url | relative_url }}">{{ page.title }}</a>
+			{% endif %}
+			{% assign name_page = page.title | append: name_page %}
+			{% endif %}
+			{% endfor %} 
+
+			<!-- Auto Generation of SPECIAL pages in the navbar -->
+			{% for item in site.theme_settings.special_page %}
+			  {% if item[1].enabled %}
+				  <a class="nav-item nav-link" href="{{ item[0] | relative_url }}" name="{{ item[0] }}">
+					<i class="fa fa-{{ item[1].icon }}" aria-hidden="true"></i>
+				  </a>
+			  {% endif %}
+			{% endfor %}
+		</div>
 	</div>
-    
-    <!-- Toggle menu -->
-    <nav class="clear">
-    <a name="pull" id="pull" class="toggle" href="#">
-    <i class="fa fa-bars fa-lg"></i>
-    </a>
-    
-    <!-- Menu -->
-    <ul class="hide">
-        <!-- Auto Generation of NORMAL pages in the navbar -->
-        {% assign name_page = "" %}
-        
-        {% for page in site.pages %}
-        {% if page.title and page.hide != true %}
-        {% if name_page contains page.title %}
-        {% else %}
-        <li class="separator"> | </li>
-        <li>
-            <a class="clear" name="{{ page.title }}" 
-               href="{{ page.url | relative_url }}">
-                {{ page.title }}
-            </a>
-        </li>
-        {% endif %}
-        {% assign name_page = page.title | append: name_page %}
-        {% endif %}
-        {% endfor %} 
-        
-        <!-- Auto Generation of SPECIAL pages in the navbar -->
-        {% for item in site.theme_settings.special_page %}
-          {% if item[1].enabled %}
-            <li class="separator"> | </li>
-            <li>
-              <a class="clear" href="{{ item[0] | relative_url }}" name="{{ item[0] }}">
-                <i class="fa fa-{{ item[1].icon }}" aria-hidden="true"></i>
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
-    </ul>
-        
-	</nav>
-</header>
+</nav>
