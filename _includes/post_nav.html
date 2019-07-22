@@ -1,18 +1,18 @@
-<div id="post-nav">
-  {% if page.previous.url %}
-  <div id="previous-post" class="post-nav-post">
-      <p>{{ site.theme_settings.str_previous_post }}</p>
-      <a alt="{{ page.previous.title }}" href="{{ page.previous.url | relative_url }}">
-        {{ page.previous.title }}
-      </a>
-  </div>
-  {% endif %}
-  {% if page.next.url %}
-  <div id="next-post" class="post-nav-post">
-      <p>{{ site.theme_settings.str_next_post }}</p>
-      <a alt="{{ page.next.title }}" href="{{ page.next.url | relative_url }}">
-        {{ page.next.title }}
-      </a>
-  </div>
-  {% endif %}
+<div class="container mx-2">
+	<ul class="pagination">
+	  {% if page.previous.url %}
+	  <li class="page-item">
+		  <a class="page-link" alt="{{ page.previous.title }}" href="{{ page.previous.url | relative_url }}">
+			  <span aria-hidden="true">&laquo;</span> {{ page.previous.title }}
+		  </a>
+	  </li>
+	  {% endif %}
+	  {% if page.next.url %}
+	  <li class="page-item">
+		  <a class="page-link" alt="{{ page.next.title }}" href="{{ page.next.url | relative_url }}">
+			{{ page.next.title }} <span aria-hidden="true">&raquo;</span>
+		  </a>
+	  </li>
+	  {% endif %}
+	</ul>
 </div>

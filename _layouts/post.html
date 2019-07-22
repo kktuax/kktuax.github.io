@@ -2,30 +2,43 @@
 layout: default
 ---
 
-{% unless page.hide_title %}
-<div class="jumbotron jumbotron-fluid bg-dark" {% if page.feature-img %} style="background-image: url('{{ page.feature-img | relative_url }}')" {% endif %}>
-	<div class="container mt-4 mb-4">	
-		<h1 class="display-4 text-white">{{ page.title }}</h1>
+<div class="p-4 container border border-dark rounded ">
+	
+	{% unless page.hide_title %}
+	<div class="container bg-dark jumbotron jumbotron-fluid p-2">		
+		{% if page.feature-img %}
+		<img src="{{ page.feature-img | relative_url }}" alt="page.title" class="img-fluid w-25 mr-4 float-left rounded" />
+		{% endif %}
+		
+		<div class="container my-2">	
+			<h1 class="display-4 text-white">{{ page.title }}</h1>
+		</div>
+		<p class="text-warning text-right mr-4">
+			{{ page.date | date: "%B %-d, %Y" }}
+			{% if page.author %} - {{ page.author }}{% endif %}
+		</p>
 	</div>
-	<p class="text-warning text-right mr-4">
-		{{ page.date | date: "%B %-d, %Y" }}
-		{% if page.author %} - {{ page.author }}{% endif %}
-	</p>
-</div>
-{% endunless %}
-<div class="container">{{ content }}</div>
-
-  <!-- Social media shares -->
-  {% include share_buttons.html %}
-
-  {% include comments/comments.html %}
-
+	{% endunless %}
+	
+	{{ content }}
+	
    <!-- Tag list -->
   {% capture tag_list %}{{ page.tags | join: "|"}}{% endcapture %}
   {% include tags_list.html tags=tag_list %}
 
+</div>
 
-
+<div class="p-4 my-2 container border border-dark rounded bg-light">
+	<div class="row">
+		<div class="col-8">
+			{% include comments/comments.html %}
+		</div>
+		<div class="col-4">
+			{% include share_buttons.html %}
+		</div>
+	</div>
+</div>
+		
 <!-- Post navigation -->
 {% if site.theme_settings.post_navigation %}
   {% include post_nav.html %}

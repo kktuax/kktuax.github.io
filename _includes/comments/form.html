@@ -1,7 +1,8 @@
-<form id="post-new-comment{{ include.reply }}" class="bootstrap-iso" method="post" action="https://staticman.maxtuni.es/v2/entry/kktuax/kktuax.github.io/master/comments"{% if include.reply %} style="display: none;"{% endif %}>
+<div id="form-new-comment{{ include.reply }}">
+	<h3>Leave a reply</h3>
+		<form id="post-new-comment{{ include.reply }}" method="post" action="https://staticman.maxtuni.es/v2/entry/kktuax/kktuax.github.io/master/comments">
   <input name="options[redirect]" type="hidden" value="{{ site.url }}{{ page.url }}" />
   <input name="options[slug]" type="hidden" value="{{ include.slug }}" />
-  {% if include.reply %}<input name="fields[replyto]" type="hidden" value="entry{{ include.reply }}" />{% endif %}
   <div class="form-row my-1">
     <label for="comment{{ include.reply }}">Comment</label>
     <textarea class="form-control" name="fields[msg]" id="comment{{ include.reply }}" required="required" cols="45" rows="8" maxlength="65525" aria-required="true"></textarea>
@@ -12,15 +13,15 @@
       <input class="form-control" name="fields[name]" id="name{{ include.reply }}" required="required" aria-required="true" type="text" />
     </div>
     <div class="form-group col-md-6">
-      <label for="email{{ include.reply }}">Email</label>
-      <input class="form-control" name="fields[email]" id="email{{ include.reply }}" required="required" aria-required="true" type="email" placeholder="Required, always hashed, never used nor published" />
+		<label for="url{{ include.reply }}">Website</label>
+		<input class="form-control" name="fields[url]" id="url{{ include.reply }}" type="url" maxlength="50" placeholder="Optionally, provide a link to your Website" />
     </div>
   </div>
   <div class="form-row my-1">
-    <label for="url{{ include.reply }}">Website</label>
-    <input class="form-control" name="fields[url]" id="url{{ include.reply }}" type="url" maxlength="50" placeholder="Optionally, provide a link to your Website" />
+	  <label for="email{{ include.reply }}">Email</label>
+	  <input class="form-control" name="fields[email]" id="email{{ include.reply }}" required="required" aria-required="true" type="email" placeholder="Required, always hashed, never used nor published" />
   </div>
-  <button type="submit" class="btn btn-primary my-1">Post comment</button>
+  <button type="submit" class="btn btn-primary my-2">Post comment</button>
   <small class="text-muted">Note that comments won't appear until approved.</small>
 </form>
 <div id="post-new-comment{{ include.reply }}-submitting" style="display: none;"><img src="/assets/img/ajax-loader.gif" style="display: inline;" /></div>
@@ -49,3 +50,5 @@ $('#post-new-comment{{ include.reply }}').submit(function(e){
     });
 });
 </script>
+
+</div>

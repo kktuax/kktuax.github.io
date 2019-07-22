@@ -1,23 +1,11 @@
 {% assign tags = include.tags | split:'|' | sort | uniq %}
 
 {% if tags.size > 0 %}
-<footer>
-  <div class="tag-list">
-    {% if tags.size == 1 %}
-      <div class="meta">Tag</div>
-    {% else %}
-      <div class="meta">Tags</div>
-    {% endif %}
-
+<div class="mt-2 mr-2 text-right">
     {% for tag in tags %}
-    <a class="button" href="{{ "/tags" | relative_url }}#{{ tag | cgi_escape }}">
-      <p><i class="fa fa-tag fa-fw"></i> {{ tag }}</p>
+    <a class="btn btn-secondary" role="button" href="{{ "/tags" | relative_url }}#{{ tag | cgi_escape }}">
+      <i class="fa fa-tag fa-fw"></i> {{ tag }}
     </a>
     {% endfor %}
-  </div>
-</footer>
-{% else %}
-<footer>
-  <div class="tag-list"></div>
-</footer>
+</div>
 {% endif %}

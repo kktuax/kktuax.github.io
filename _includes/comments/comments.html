@@ -1,32 +1,25 @@
-{% if include.slug %}{% assign slug = include.slug %}{% else %}{% assign slug = page.slug %}{% endif %}
-{% if site.data.comments[slug] %}{% assign comments = site.data.comments[slug] | sort %}
-<section id="comments" class="comments">
-	<h3>{{ comments | size }} comment{% if comments.size > 1 %}s{% endif %} for <em>{{ page.title }}</em></h3>
-	<ul class="comment-list top">
-	{% for comment in comments %}{% assign next = forloop.index0 | plus: 1 %}
-		<li id="comment-{{ comment[1].date }}" class="comment">
-		<article class="comment-body" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
-			{% assign c = comment[1] %}{% include comments/vcard.html comment=c %}
-			<div class="comment-content">{{ comment[1].message | markdownify }}</div>
-		</article>
-		{% if comment[1].replyto and comments[next][1].replyto %}
-		</li>
-		{% elsif comment[1].replyto %}
-	</ul>
-		<span onclick="$('#post-new-comment{{ comment[1].date }}').toggle()" style="cursor: pointer;">Reply to This Thread</span>
-		{% assign d = comment[1].date %}{% include comments/form.html slug=slug reply=d %}
-		</li>
-		{% elsif comments[next][1].replyto %}
-		<ul class="comment-list">
-		{% else %}
-		<span onclick="$('#post-new-comment{{ comment[1].date }}').toggle()" style="cursor: pointer;">Reply to This Thread</span>
-		{% assign d = comment[1].date %}{% include comments/form.html slug=slug reply=d %}
-		</li>
-		{% endif %}
+<div class="mx-4">
+	{% if include.slug %}{% assign slug = include.slug %}{% else %}{% assign slug = page.slug %}{% endif %}
+	{% if site.data.comments[slug] %}{% assign comments = site.data.comments[slug] | sort %}
+	{% for comment in comments %}{% assign next = forloop.index0 | plus: 1 %}{% assign c = comment[1] %}
+	<h3>{{ comments | size }} comment{% if comments.size != 1 %}s{% endif %}</h3>
+	<div id="comment-{{ comment[1].date }}" class="media">
+		<img alt="avatar for {{ c.name }}" src="https://www.gravatar.com/avatar/{{ c.email }}" class="mr-3 rounded-circle" height="80" width="80" />		
+		<div class="media-body">			
+			<h5>
+			  {% if c.url %}{% unless c.url == blank %}<a class="url" target="_blank" rel="external nofollow" href="{{ c.url }}">{% endunless %}{% endif %}
+			  {{ c.name }}
+			  {% if c.url %}{% unless c.url == blank %}</a>{% endunless %}{% endif %}
+			</h5>
+			<p>
+				<a class="text-muted font-weight-light" href="{% if include.slug %}/{{ include.slug }}/{% endif %}#comment-{{ c.date }}">
+				  {{ c.date | date: '%B %d, %Y %I:%M %p' }}
+				</a>
+			</p>			
+			{{ c.message | markdownify }}
+		</div>
+	</div>
 	{% endfor %}
-	</ul>
-</section>
-{% endif %}
-
-<h3 id="reply-title" class="comment-reply-title">Leave a Reply</h3>
-{% include comments/form.html slug=slug %}
+	{% endif %}
+	{% include comments/form.html slug=slug %}
+</div>
