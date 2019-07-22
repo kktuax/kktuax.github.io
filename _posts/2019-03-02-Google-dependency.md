@@ -1,10 +1,10 @@
 ---
 layout: post
-title: " Reducing my Google dependency"
+title: "Reducing my Google dependency"
 tags: [google, android, alternatives]
 ---
 
-Being myself traditionally an early-adopter, and being a fan of their search engine, I quickly jumped to try lots of [Google](http://www.google.com/)'s services. Even before having an smartphone I was already using several services, like [GMail](https://www.gmail.com/) or [Google Calendar](https://calendar.google.com/). With time, I started using many other services from them as they keep providing and ever more integrated experience:
+As a fan of their search engine, I quickly jumped to try lots of [Google](http://www.google.com/)'s services. Even before having an smartphone I was already using [GMail](https://www.gmail.com/) or [Google Calendar](https://calendar.google.com/). With time, I started using many other services from them as they keep providing and ever more integrated experience:
 
  * [Search](http://www.google.com) and [maps](https://www.google.com/maps)
  * [Email](https://www.gmail.com), [video-conference](https://hangouts.google.com) and [calendar](https://calendar.google.com)
@@ -15,7 +15,7 @@ Being myself traditionally an early-adopter, and being a fan of their search eng
 
 ## Trying to find some alternatives
 
-However with time I was getting more concerned about the amount of information they were gathering about me. I guess the breaking point was when I bought my previous phone and I realized Google Assistant was aware of my location constantly, and it became a bit scary for instance when he offered traffic advice when he realized it was more or less my time to go home after work. That, combined with the fact that, after [going public](https://www.nytimes.com/2004/08/20/opinion/google-goes-public.html), they even [stopped trying not to be evil](http://time.com/4060575/alphabet-google-dont-be-evil/), made me think about other alternatives.
+However with time I was getting more concerned about the amount of information they were gathering about me. I guess awakening point was when I bought a phone with Google Assistant and by default it was aware of my location. It became a bit scary for instance when it offered traffic advice after realizing it was my time to go home after work. That, combined with the fact that, after [going public](https://www.nytimes.com/2004/08/20/opinion/google-goes-public.html), they even [stopped trying not to be evil](http://time.com/4060575/alphabet-google-dont-be-evil/), made me think about other alternatives.
 
 This is what I achieved so far:
 

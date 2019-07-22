@@ -1,9 +1,9 @@
 {% assign tags = include.tags | split:'|' | sort | uniq %}
 
 {% if tags.size > 0 %}
-<div class="mt-2 mr-2 text-right">
+<div class="my-1 mr-2 text-right">
     {% for tag in tags %}
-    <a class="btn btn-secondary" role="button" href="{{ "/tags" | relative_url }}#{{ tag | cgi_escape }}">
+    <a class="btn btn-secondary my-1" role="button" href="{{ "/tags" | relative_url }}#{{ tag | cgi_escape }}">
       <i class="fa fa-tag fa-fw"></i> {{ tag }}
     </a>
     {% endfor %}
